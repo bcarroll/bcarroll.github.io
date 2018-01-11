@@ -1,3 +1,4 @@
+[BACK](/)
 # PiControl
 ###### Raspberry Pi Control Center
 
