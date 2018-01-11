@@ -1,5 +1,3 @@
-
-###
 # PiControl
   Web-based Raspberry Pi Control Center
 
