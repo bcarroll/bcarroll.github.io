@@ -1,4 +1,8 @@
 #!/bin/bash
+echo
+echo
+echo
+echo
 echo "######################################"
 echo "#        Installing PiControl        #"
 echo "######################################"
