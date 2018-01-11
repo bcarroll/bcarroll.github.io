@@ -3,7 +3,7 @@ echo "Running apt-get update"
 sudo apt-get update
 
 echo "Installing Operating System dependencies"
-sudo apt-get -y install git gcc libffi-dev libssl-dev python-dev python-cryptography wiringpi
+sudo apt-get -y install git gcc libffi-dev libssl-dev python-dev python-pip python-cryptography wiringpi
 
 echo "Installing Python dependencies"
 sudo pip install Flask Flask-SSLify flask_sqlalchemy ipaddress netifaces netaddr psutil simplepam wiringpi
