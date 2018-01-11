@@ -1,3 +1,4 @@
-[PiControl/index] PiControl Documentation
 
-[getPiControl] Download the getPiControl installation script
+[PiControl Documentation](PiControl/index)
+
+[Download the getPiControl installation script](getPiControl)
