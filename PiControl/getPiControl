@@ -13,16 +13,19 @@ echo "######################################"
 echo " Running apt-get update"
 echo
 sudo apt-get -q update
+echo "done."
 echo
 echo "######################################"
 echo " Installing Operating System dependencies"
 echo
 sudo apt-get -q -y install git gcc libffi-dev libssl-dev python-dev python-pip python-cryptography wiringpi
+echo "done."
 echo
 echo "######################################"
 echo " Installing Python dependencies"
 echo
 sudo pip -q install Flask Flask-SSLify flask_sqlalchemy ipaddress netifaces netaddr psutil simplepam wiringpi
+echo "done."
 echo
 echo "######################################"
 echo "# Directory to clone PiControl into #"
