@@ -3,6 +3,9 @@ echo "######################################"
 echo "#        Installing PiControl        #"
 echo "######################################"
 echo
+echo "######################################"
+echo "####### Installing Dependencies ######"
+echo "######################################"
 echo " Running apt-get update"
 sudo apt-get -q update
 
@@ -11,6 +14,10 @@ sudo apt-get -q -y install git gcc libffi-dev libssl-dev python-dev python-pip p
 
 echo " Installing Python dependencies"
 sudo pip install Flask Flask-SSLify flask_sqlalchemy ipaddress netifaces netaddr psutil simplepam wiringpi
+echo
+echo "######################################"
+echo "# Directory to clone PiControl into #"
+echo "######################################"
 
 echo -n " Enter the path to install PiControl into (default: /usr/local/src) : "
 read PiControlDirectory
@@ -28,6 +35,10 @@ sudo git clone https://github.com/bcarroll/PiControl.git
 sudo chmod +x PiControl/PiControl.sh
 sudo chown -R $USER PiControl
 
+echo
+echo "######################################"
+echo "#      Start PiControl at boot?      #"
+echo "######################################"
 echo -n " Do you want to run PiControl when the Raspberry Pi starts? [y/n]:"
 read -n 1 answer
 if [ -z $answer ]
@@ -38,11 +49,18 @@ fi
 if [[ $answer == "y" ]]
 then
     sudo sed -i "$ a Start PiControl" /etc/rc.local
-    sudo sed -i "$ a sudo -u pi python `pwd`/PiControl.py &" /etc/rc.local
+    sudo sed -i "$ a sudo -u pi python `pwd`/PiControl/PiControl.sh start &" /etc/rc.local
 fi
 
 echo 
+echo "######################################"
+echo "#   Clean up local apt repository    #"
+echo "######################################"
 echo " Cleaning up"
 sudo apt-get -q -y clean
 sudo apt-get -q -y autoclean
 sudo apt-get -q -y autoremove
+echo "Done."
+echo
+echo "To start PiControl run the following command: $PiControlDirectory/PiControl/PiControl.sh start"
+echo
