@@ -22,7 +22,7 @@ echo
 echo "######################################"
 echo " Installing Python dependencies"
 echo
-sudo pip install Flask Flask-SSLify flask_sqlalchemy ipaddress netifaces netaddr psutil simplepam wiringpi
+sudo pip -q install Flask Flask-SSLify flask_sqlalchemy ipaddress netifaces netaddr psutil simplepam wiringpi
 echo
 echo "######################################"
 echo "# Directory to clone PiControl into #"
@@ -31,12 +31,23 @@ echo
 echo -n " Enter the path to install PiControl into (default: /usr/local/src) : "
 read PiControlDirectory
 
-if [[ -z "$PiControlDirectory" ]]
-then
+if [[ -z "$PiControlDirectory" ]]; then
     PiControlDirectory="/usr/local/src"
 fi
 
 cd $PiControlDirectory
+
+if [[ -d "$PiControlDirectory/PiControl" ]]; then
+    echo "$PiControlDirectory/PiControl already exists.  Do you want to overwrite this directory" [y/n]: "
+    read -n 1 overwrite
+    if [[ -z $overwrite ]]; then
+        overwrite="n"
+    fi
+    if [[ $overwrite=="y" ]]; then
+        sudo rm -r PiControl
+    fi
+fi
+
 echo
 echo "######################################"
 echo " Cloning PiControl from GitHub to ${PiControlDirectory}"
@@ -51,13 +62,11 @@ echo "#      Start PiControl at boot?      #"
 echo "######################################"
 echo -n " Do you want to run PiControl when the Raspberry Pi starts? [y/n]:"
 read -n 1 answer
-if [ -z $answer ]
-then
+if [[ -z $answer ]]; then
     answer="n"
 fi
 
-if [[ $answer == "y" ]]
-then
+if [[ $answer == "y" ]]; then
     sudo sed -i "$ a Start PiControl" /etc/rc.local
     sudo sed -i "$ a sudo -u pi python `pwd`/PiControl/PiControl.sh start &" /etc/rc.local
 fi
