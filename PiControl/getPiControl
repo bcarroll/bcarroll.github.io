@@ -1,14 +1,18 @@
 #!/bin/bash
-echo "Running apt-get update"
-sudo apt-get update
+echo "######################################"
+echo "#        Installing PiControl        #"
+echo "######################################"
+echo
+echo " Running apt-get update"
+sudo apt-get -q update
 
-echo "Installing Operating System dependencies"
-sudo apt-get -y install git gcc libffi-dev libssl-dev python-dev python-pip python-cryptography wiringpi
+echo " Installing Operating System dependencies"
+sudo apt-get -q -y install git gcc libffi-dev libssl-dev python-dev python-pip python-cryptography wiringpi
 
-echo "Installing Python dependencies"
+echo " Installing Python dependencies"
 sudo pip install Flask Flask-SSLify flask_sqlalchemy ipaddress netifaces netaddr psutil simplepam wiringpi
 
-echo -n "Enter the path to install PiControl into (default: /usr/local/src) : "
+echo -n " Enter the path to install PiControl into (default: /usr/local/src) : "
 read PiControlDirectory
 
 if [[ -z "$PiControlDirectory" ]]
@@ -18,15 +22,15 @@ fi
 
 cd $PiControlDirectory
 
-echo "Cloning PiControl from GitHub to ${PiControlDirectory}"
+echo " Cloning PiControl from GitHub to ${PiControlDirectory}"
 sudo git clone https://github.com/bcarroll/PiControl.git
 
 sudo chmod +x PiControl/PiControl.sh
 sudo chown -R $USER PiControl
 
-echo -n "Do you want to run PiControl when the Raspberry Pi starts? [y/n]:"
+echo -n " Do you want to run PiControl when the Raspberry Pi starts? [y/n]:"
 read -n 1 answer
-if [[ -z $answer ]]
+if [ -z $answer ]
 then
     answer="n"
 fi
@@ -37,4 +41,8 @@ then
     sudo sed -i "$ a sudo -u pi python `pwd`/PiControl.py &" /etc/rc.local
 fi
 
-echo
+echo 
+echo " Cleaning up"
+sudo apt-get -q -y clean
+sudo apt-get -q -y autoclean
+sudo apt-get -q -y autoremove
