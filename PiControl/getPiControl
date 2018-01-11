@@ -11,18 +11,23 @@ echo "######################################"
 echo "####### Installing Dependencies ######"
 echo "######################################"
 echo " Running apt-get update"
+echo
 sudo apt-get -q update
-
+echo
+echo "######################################"
 echo " Installing Operating System dependencies"
+echo
 sudo apt-get -q -y install git gcc libffi-dev libssl-dev python-dev python-pip python-cryptography wiringpi
-
+echo
+echo "######################################"
 echo " Installing Python dependencies"
+echo
 sudo pip install Flask Flask-SSLify flask_sqlalchemy ipaddress netifaces netaddr psutil simplepam wiringpi
 echo
 echo "######################################"
 echo "# Directory to clone PiControl into #"
 echo "######################################"
-
+echo
 echo -n " Enter the path to install PiControl into (default: /usr/local/src) : "
 read PiControlDirectory
 
@@ -32,10 +37,11 @@ then
 fi
 
 cd $PiControlDirectory
-
+echo
+echo "######################################"
 echo " Cloning PiControl from GitHub to ${PiControlDirectory}"
 sudo git clone https://github.com/bcarroll/PiControl.git
-
+echo
 sudo chmod +x PiControl/PiControl.sh
 sudo chown -R $USER PiControl
 
@@ -61,9 +67,11 @@ echo "######################################"
 echo "#   Clean up local apt repository    #"
 echo "######################################"
 echo " Cleaning up"
+echo
 sudo apt-get -q -y clean
 sudo apt-get -q -y autoclean
 sudo apt-get -q -y autoremove
+echo
 echo "Done."
 echo
 echo "To start PiControl run the following command: $PiControlDirectory/PiControl/PiControl.sh start"
