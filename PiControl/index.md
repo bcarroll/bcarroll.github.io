@@ -4,6 +4,13 @@
 
 ***
 ## Installation
+
+### Automated Installation (quick and easy)
+1. Download and run the PiControl installation script
+    *    ``bash -c "$(wget -O - https://bcarroll.github.io/PiControl/getPiControl)"``
+
+***
+### Manual Installation (do all the dirty work yourself)
 1. Download the code
     * git clone https://github.com/bcarroll/PiControl.git
     * [Download the repository as a zip file](https://github.com/bcarroll/PiControl/archive/master.zip)
@@ -26,10 +33,12 @@
     If you remove the "sudo -u pi" part, PiControl will run as "root" (not advised, for security reasons).
     You can also create a new account to run PiControl as with the [adduser](https://www.raspberrypi.org/documentation/linux/usage/users.md) command.
 
-6.    Start PiControl
-    *    ``/directory/where/you/cloned-or_unzipped/PiControl.sh start``
 
 ***
+
+### Start PiControl
+    *    ``/directory/where/you/cloned-or_unzipped/PiControl.sh start``
+
 
 ## Usage
 Once you have PiControl installed and running, open a web browser *(either on the Pi itself or another machine (or smartphone) that can communication with the Pi)*
