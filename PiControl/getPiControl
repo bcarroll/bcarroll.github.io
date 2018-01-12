@@ -24,7 +24,7 @@ echo
 echo "######################################"
 echo " Installing Python dependencies"
 echo
-sudo pip -q install Flask Flask-SSLify flask_sqlalchemy ipaddress netifaces netaddr psutil simplepam wiringpi
+sudo pip -q install Flask Flask-SSLify flask_sqlalchemy ipaddress netifaces netaddr psutil simplepam wiringpi requests
 echo "done."
 echo
 echo "######################################"
@@ -74,7 +74,7 @@ if [[ $answer == "y" ]]; then
     sudo sed -i "$ a sudo -u pi python `pwd`/PiControl/PiControl.sh start &" /etc/rc.local
 fi
 
-echo 
+echo
 echo "######################################"
 echo "#   Clean up local apt repository    #"
 echo "######################################"
