@@ -4,6 +4,6 @@
   * [PiControl Documentation](PiControl/index)
 
   * To install PiControl directly from the Raspberry Pi execute the following command:
-  
-    ``wget -O - https://bcarroll.github.com/getPiControl|bash``
-    
+
+    ``sudo wget https://bcarroll.github.io/PiControl/getPiControl && sudo bash getPiControl``
+
