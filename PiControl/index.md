@@ -13,6 +13,7 @@
 ### Manual Installation (do all the dirty work yourself)
 1. Download the code
     * git clone https://github.com/bcarroll/PiControl.git
+    or
     * [Download the repository as a zip file](https://github.com/bcarroll/PiControl/archive/master.zip)
 2. Install Operating System dependencies (mostly for SSL support)
     *    ``sudo apt-get update``
