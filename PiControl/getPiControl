@@ -24,7 +24,7 @@ echo
 echo "######################################"
 echo " Installing Python dependencies"
 echo
-sudo pip -q install Flask Flask-SSLify flask_sqlalchemy ipaddress netifaces netaddr psutil simplepam wiringpi requests
+sudo pip -q install Flask Flask-SSLify flask_sqlalchemy ipaddress netifaces netaddr psutil simplepam wiringpi requests xmltodict
 echo "done."
 echo
 echo "######################################"
