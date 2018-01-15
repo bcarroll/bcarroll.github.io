@@ -64,7 +64,7 @@ Once you get past the SSL warning screen, you will be presented with the PiContr
 
 Login with a valid OS user account (pi)
 
-![PiControl - Main](https://bcarroll.github.io/PiControl/Main_sm.png "PiControl Main screen")
+[![PiControl - Main](https://bcarroll.github.io/PiControl/Main_sm.png "PiControl Main screen")](https://bcarroll.github.io/PiControl/Main.png)
 
 The main screen displays the hostname of your Raspberry Pi in the upper left, a picture of the hardware on the upper right and the Raspberry Pi Model information and hardware details.
 
@@ -72,40 +72,50 @@ The menubar on the left side of the screen allows you to view/control various as
 
 ***
 
+[![PiControl - Dashboard](https://bcarroll.github.io/PiControl/Dashboard_sm.png "PiControl Dashboard screen")](https://bcarroll.github.io/PiControl/Dashboard.png)
+
+The Dashboard page displays charts containing data for all of the devices on your network that are running PiControl (with the same secret key)
+
+[![PiControl - Nodes](https://bcarroll.github.io/PiControl/Nodes_sm.png "PiControl Nodes screen")](https://bcarroll.github.io/PiControl/Nodes.png)
+
+The Nodes page displays all of the discovered devices on your network that are running PiControl (with the same secret key)
+
+Clicking on a Node in the Nodes list will take you to the PiControl interface on that Node.
+
 ### System Menu
-![PiControl - Processes](https://bcarroll.github.io/PiControl/Processes_sm.png "PiControl Processes screen")
+[![PiControl - Processes](https://bcarroll.github.io/PiControl/Processes_sm.png "PiControl Processes screen")](https://bcarroll.github.io/PiControl/Processes.png)
 
 The Processes section displays all running processes
 
-![PiControl - Disk](https://bcarroll.github.io/PiControl/Disk_sm.png "PiControl Disk screen")
+[![PiControl - Disk](https://bcarroll.github.io/PiControl/Disk_sm.png "PiControl Disk screen")](https://bcarroll.github.io/PiControl/Disk.png)
 
 The Disk section displays disk usage
 
-![PiControl - Localisation](https://bcarroll.github.io/PiControl/Localisation_sm.png "PiControl Localisation screen")
+[![PiControl - Localisation](https://bcarroll.github.io/PiControl/Localisation_sm.png "PiControl Localisation screen")](https://bcarroll.github.io/PiControl/Localisation.png)
 
 The Localisation section displays locale configuration (Keyboard layout, etc...)
 
-![PiControl - Memory](https://bcarroll.github.io/PiControl/Memory_sm.png "PiControl Memory screen")
+[![PiControl - Memory](https://bcarroll.github.io/PiControl/Memory_sm.png "PiControl Memory screen")](https://bcarroll.github.io/PiControl/Memory.png)
 
 The Memory section displays memory (virtual and physical) usage and voltages
 
-![PiControl - Network](https://bcarroll.github.io/PiControl/Network_sm.png "PiControl Network screen")
+[![PiControl - Network](https://bcarroll.github.io/PiControl/Network_sm.png "PiControl Network screen")](https://bcarroll.github.io/PiControl/Network.png)
 
 The Network section displays information about all the available Network Interfaces
 
-![PiControl - Services](https://bcarroll.github.io/PiControl/Services_sm.png "PiControl Services screen")
+[![PiControl - Services](https://bcarroll.github.io/PiControl/Services_sm.png "PiControl Services screen")](https://bcarroll.github.io/PiControl/Services.png)
 
 The Services section displays information for all the configured services
 
-![PiControl - Users](https://bcarroll.github.io/PiControl/Users_sm.png "PiControl Users screen")
+[![PiControl - Users](https://bcarroll.github.io/PiControl/Users_sm.png "PiControl Users screen")](https://bcarroll.github.io/PiControl/Users.png)
 
 The User section displays information about user accounts
 
-![PiControl - Video](https://bcarroll.github.io/PiControl/Video_sm.png "PiControl Video screen")
+[![PiControl - Video](https://bcarroll.github.io/PiControl/Video_sm.png "PiControl Video screen")](https://bcarroll.github.io/PiControl/Video.png)
 
 The Video section displays information about the video configuration
 
 ### Hardware Menu
-![PiControl - GPIO](https://bcarroll.github.io/PiControl/GPIO_sm.png "PiControl GPIO screen")
+[![PiControl - GPIO](https://bcarroll.github.io/PiControl/GPIO_sm.png "PiControl GPIO screen")](https://bcarroll.github.io/PiControl/GPIO.png)
 
 The GPIO section displays the current status of all the Raspberry Pi GPIO pins, and allows you to change the values (on/HIGH or off/LOW)
