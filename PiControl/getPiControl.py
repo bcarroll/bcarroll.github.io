@@ -87,4 +87,4 @@ if answer.lower() == "n":
     print ('')
 else:
     print ('')
-    os.popen(PiControlDirectory + '/PiControl/PiControl.sh start')
+    os.system('cd ' + PiControlDirectory + ' && ' + PiControlDirectory + '/PiControl/PiControl.sh start')
