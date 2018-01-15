@@ -56,7 +56,8 @@ print (' Cloning PiControl from GitHub to ' + PiControlDirectory)
 os.popen('sudo git clone https://github.com/bcarroll/PiControl.git')
 print ('')
 os.popen('sudo chmod +x PiControl/PiControl.sh')
-os.popen('sudo chown -R $USER PiControl')
+USER = os.popen('echo $USER').read().splitlines()[0]
+os.popen('sudo chown -R ' + USER + ' PiControl')
 
 print ('')
 print ('######################################')
