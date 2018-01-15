@@ -7,7 +7,7 @@
 
 ### Automated Installation (quick and easy)
 1. Download and run the PiControl installation script
-    *    ``sudo wget https://bcarroll.github.io/PiControl/getPiControl && sudo bash getPiControl``
+    *    ``sudo wget https://bcarroll.github.com/PiControl/getPiControl.py && python getPiControl.py``
 
 ***
 ### Manual Installation (do all the dirty work yourself)
