@@ -60,7 +60,7 @@ If you do not want to use the included self-signed certificate, you can replace 
 
 Once you get past the SSL warning screen, you will be presented with the PiControl login interface.  Login using your Raspberry Pi credential ("pi") and password.
 
-![PiControl Login Screen](https://bcarroll.github.io/PiControl/Login_sm.png "Login with a valid OS user account: pi")
+[![PiControl Login Screen](https://bcarroll.github.io/PiControl/Login_sm.png "Login with a valid OS user account: pi")](https://bcarroll.github.io/PiControl/Login.png)
 
 Login with a valid OS user account (pi)
 
