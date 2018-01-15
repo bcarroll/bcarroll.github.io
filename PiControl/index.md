@@ -43,7 +43,7 @@
 ***
 
 ### Start PiControl
-    *    ``/directory/where/you/cloned-or_unzipped/PiControl.sh start``
+    *    ``cd /directory/where/you/cloned-or_unzipped && ./PiControl.sh start``
 
 
 ## Usage
