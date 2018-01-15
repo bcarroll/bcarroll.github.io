@@ -119,3 +119,9 @@ The Video section displays information about the video configuration
 [![PiControl - GPIO](https://bcarroll.github.io/PiControl/GPIO_sm.png "PiControl GPIO screen")](https://bcarroll.github.io/PiControl/GPIO.png)
 
 The GPIO section displays the current status of all the Raspberry Pi GPIO pins, and allows you to change the values (on/HIGH or off/LOW)
+
+***
+
+[![PiControl - Settings](https://bcarroll.github.io/PiControl/Settings_sm.png "PiControl Settings screen")](https://bcarroll.github.io/PiControl/Settings.png)
+
+The Settings section allows you to configure PiControl (logging, secret key, beacon settings, background threads)
