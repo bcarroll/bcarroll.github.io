@@ -1,90 +1,86 @@
-#!/bin/bash
-echo
-echo
-echo
-echo
-echo "######################################"
-echo "#        Installing PiControl        #"
-echo "######################################"
-echo
-echo "######################################"
-echo "####### Installing Dependencies ######"
-echo "######################################"
-echo " Running apt-get update"
-echo
-sudo apt-get -q update
-echo "done."
-echo
-echo "######################################"
-echo " Installing Operating System dependencies"
-echo
-sudo apt-get -q -y install git gcc libffi-dev libssl-dev python-dev python-pip python-cryptography wiringpi
-echo "done."
-echo
-echo "######################################"
-echo " Installing Python dependencies"
-echo
-sudo pip -q install Flask Flask-SSLify flask_sqlalchemy ipaddress netifaces netaddr psutil simplepam wiringpi requests xmltodict
-echo "done."
-echo
-echo "######################################"
-echo "# Directory to clone PiControl into #"
-echo "######################################"
-echo
-echo -n " Enter the path to install PiControl into (default: /usr/local/src) : "
-read PiControlDirectory
+#!/usr/bin/python
+import os
 
-if [[ -z "$PiControlDirectory" ]]; then
-    PiControlDirectory="/usr/local/src"
-fi
+print ('')
+print ('')
+print ('')
+print ('')
+print ('######################################')
+print ('#        Installing PiControl        #')
+print ('######################################')
+print ('')
+print ('######################################')
+print ('####### Installing Dependencies ######')
+print ('######################################')
+print (' Running apt-get update')
+print ('')
+os.popen('sudo apt-get -q update')
+print ('done.')
+print ('')
+print ('######################################')
+print (' Installing Operating System dependencies')
+print ('')
+os.popen('sudo apt-get -q -y install git gcc libffi-dev libssl-dev python-dev python-pip python-cryptography wiringpi')
+print ('done.')
+print ('')
+print ('######################################')
+print (' Installing Python dependencies')
+print ('')
+os.popen('sudo pip -q install Flask Flask-SSLify flask_socketio flask_sqlalchemy ipaddress netifaces netaddr psutil simplepam wiringpi requests xmltodict')
+print ('done.')
+print ('')
+print ('######################################')
+print ('# Directory to clone PiControl into #')
+print ('######################################')
+print ('')
+PiControlDirectory = input(' Enter the path to install PiControl into (default: /usr/local/src) : ')
 
-cd $PiControlDirectory
+if len(PiControlDirectory) < 1:
+    PiControlDirectory = "/usr/local/src"
 
-if [[ -d "$PiControlDirectory/PiControl" ]]; then
-    echo "$PiControlDirectory/PiControl already exists.  Do you want to overwrite this directory" [y/n]: "
+cd PiControlDirectory
+
+if PiControlDirectory + '/PiControl':
+    print (PiControlDirectory + '/PiControl already exists.  Do you want to overwrite this directory" [y/n]: ')
     read -n 1 overwrite
-    if [[ -z $overwrite ]]; then
-        overwrite="n"
-    fi
-    if [[ $overwrite=="y" ]]; then
-        sudo rm -r PiControl
-    fi
-fi
+    if overwrite:
+        overwrite = "n"
+    if overwrite == "y":
+        os.popen('sudo rm -r PiControl')
 
-echo
-echo "######################################"
-echo " Cloning PiControl from GitHub to ${PiControlDirectory}"
-sudo git clone https://github.com/bcarroll/PiControl.git
-echo
-sudo chmod +x PiControl/PiControl.sh
-sudo chown -R $USER PiControl
 
-echo
-echo "######################################"
-echo "#      Start PiControl at boot?      #"
-echo "######################################"
-echo -n " Do you want to run PiControl when the Raspberry Pi starts? [y/n]:"
+print ('')
+print ('######################################')
+print (' Cloning PiControl from GitHub to '+ PiControlDirectory)
+os.popen('sudo git clone https://github.com/bcarroll/PiControl.git')
+print ('')
+os.popen('sudo chmod +x PiControl/PiControl.sh')
+os.popen('sudo chown -R $USER PiControl')
+
+print ('')
+print ('######################################')
+print ('#      Start PiControl at boot?      #')
+print ('######################################')
+print (' Do you want to run PiControl when the Raspberry Pi starts? [y/n]:')
 read -n 1 answer
-if [[ -z $answer ]]; then
-    answer="n"
-fi
+if answer:
+    answer = "n"
 
-if [[ $answer == "y" ]]; then
-    sudo sed -i "$ a Start PiControl" /etc/rc.local
-    sudo sed -i "$ a sudo -u pi python `pwd`/PiControl/PiControl.sh start &" /etc/rc.local
-fi
+if answer == "y":
+    os.popen('sudo sed -i "$ a Start PiControl" /etc/rc.local')
+    os.popen('sudo sed -i "$ a sudo -u pi python `pwd`/PiControl/PiControl.sh start &" /etc/rc.local')
 
-echo
-echo "######################################"
-echo "#   Clean up local apt repository    #"
-echo "######################################"
-echo " Cleaning up"
-echo
-sudo apt-get -q -y clean
-sudo apt-get -q -y autoclean
-sudo apt-get -q -y autoremove
-echo
-echo "Done."
-echo
-echo "To start PiControl run the following command: $PiControlDirectory/PiControl/PiControl.sh start"
-echo
+print ('')
+print ('######################################')
+print ('#   Clean up local apt repository    #')
+print ('######################################')
+print ('Cleaning up')
+print ('')
+os.popen('sudo apt-get -q -y clean')
+os.popen('sudo apt-get -q -y autoclean')
+os.popen('sudo apt-get -q -y autoremove')
+print ('')
+print ('Done.')
+print ('')
+print ('To start PiControl run the following command: $PiControlDirectory/PiControl/PiControl.sh start')
+print ('')
