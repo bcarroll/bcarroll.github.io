@@ -7,7 +7,7 @@
 
 ### Automated Installation (quick and easy)
 1. Download and run the PiControl installation script
-    *    ``sudo wget https://bcarroll.github.com/PiControl/getPiControl.py && python getPiControl.py``
+    *    ``sudo wget https://bcarroll.github.com/PiControl/getPiControl.py && sudo python getPiControl.py``
 
 ***
 ### Manual Installation (do all the dirty work yourself)
@@ -28,7 +28,10 @@
 
     The above command changes the mode of the PiControl.sh script so it can be executed from a shell.
 
-5.    *Optional* - Start PiControl when your Raspberry Pi boots
+5. Change ownership of the PiControl directory
+   * chown -R pi:pi /directory/where/you/cloned-or_unzipped
+   
+6.    *Optional* - Start PiControl when your Raspberry Pi boots
     *    ``echo "Start PiControl"| sudo tee --append /etc/rc.local``
     *    ``echo "sudo -u pi python /directory/where/you/cloned-or_unzipped/PiControl.sh start &"| sudo tee --append /etc/rc.local``
 
@@ -78,9 +81,9 @@ The Processes section displays all running processes
 
 The Disk section displays disk usage
 
-![PiControl - Localization](https://bcarroll.github.io/PiControl/Localization_sm.png "PiControl Localization screen")
+![PiControl - Localisation](https://bcarroll.github.io/PiControl/Localisation_sm.png "PiControl Localisation screen")
 
-The Localization section displays locale configuration (Keyboard layout, etc...)
+The Localisation section displays locale configuration (Keyboard layout, etc...)
 
 ![PiControl - Memory](https://bcarroll.github.io/PiControl/Memory_sm.png "PiControl Memory screen")
 
