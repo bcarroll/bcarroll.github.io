@@ -66,7 +66,9 @@ print ('######################################')
 answer = raw_input(' Do you want to run PiControl when the Raspberry Pi starts? [y/N]:')
 if answer.lower() == "y":
     if len(os.popen('grep PiControl.sh /etc/rc.local').read().splitlines()[0]):
-        print('PiControl appears to already exist in /etc/rc.local.')
+        print('')
+        print('*** PiControl appears to already exist in /etc/rc.local. ***')
+        print('')
     os.popen('sudo sed -i "$ a Start PiControl" /etc/rc.local')
     os.popen('sudo sed -i "$ a sudo -u pi python ' + PiControlDirectory + '/PiControl/PiControl.sh start &" /etc/rc.local')
 else:
