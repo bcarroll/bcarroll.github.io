@@ -1,6 +1,6 @@
 [BACK](/)
 # PiControl
-###### Raspberry Pi Control Center
+###### Raspberry Pi Control Center (One interface for all your Raspberry's)
 
 ***
 ## Installation
