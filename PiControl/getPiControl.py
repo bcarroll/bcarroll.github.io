@@ -34,7 +34,7 @@ print ('######################################')
 print ('# Directory to clone PiControl into #')
 print ('######################################')
 print ('')
-PiControlDirectory = input(' Enter the path to install PiControl into (default: /usr/local/src) : ')
+PiControlDirectory = raw_input(' Enter the path to install PiControl into (default: /usr/local/src) : ')
 
 if len(PiControlDirectory) < 1:
     PiControlDirectory = "/usr/local/src"
@@ -42,8 +42,8 @@ if len(PiControlDirectory) < 1:
 os.chdir(PiControlDirectory)
 
 if os.path.isdir(PiControlDirectory + '/PiControl'):
-    overwrite = input(PiControlDirectory + '/PiControl already exists.  Do you want to overwrite this directory" [y/n]: ')
-    if overwrite.lower == "y":
+    overwrite = raw_input(PiControlDirectory + '/PiControl already exists.  Do you want to overwrite this directory" [y/N]: ')
+    if overwrite.lower() == "y":
         os.popen('sudo rm -r PiControl')
     else:
         print('PiControl installation cancelled.')
@@ -62,8 +62,8 @@ print ('')
 print ('######################################')
 print ('#      Start PiControl at boot?      #')
 print ('######################################')
-answer = input(' Do you want to run PiControl when the Raspberry Pi starts? [y/n]:')
-if answer == "y":
+answer = raw_input(' Do you want to run PiControl when the Raspberry Pi starts? [y/N]:')
+if answer.lower() == "y":
     os.popen('sudo sed -i "$ a Start PiControl" /etc/rc.local')
     os.popen('sudo sed -i "$ a sudo -u pi python ' + PiControlDirectory + '/PiControl/PiControl.sh start &" /etc/rc.local')
 else:
@@ -81,8 +81,8 @@ os.popen('sudo apt-get -q -y autoremove')
 print ('')
 print ('Done.')
 print ('')
-answer = input('Do you want to start PiControl now? [y/n]:')
-if answer == "n":
+answer = raw_input('Do you want to start PiControl now? [Y/n]:')
+if answer.lower() == "n":
     print ('To start PiControl run the following command: ' + PiControlDirectory + '/PiControl/PiControl.sh start')
     print ('')
 else:
