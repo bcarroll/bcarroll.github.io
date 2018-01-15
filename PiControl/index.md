@@ -74,11 +74,11 @@ The menubar on the left side of the screen allows you to view/control various as
 
 [![PiControl - Dashboard](https://bcarroll.github.io/PiControl/Dashboard_sm.png "PiControl Dashboard screen")](https://bcarroll.github.io/PiControl/Dashboard.png)
 
-The Dashboard page displays charts containing data for all of the devices on your network that are running PiControl (with the same secret key)
+The Dashboard section displays charts containing data for all of the devices on your network that are running PiControl (with the same secret key)
 
 [![PiControl - Nodes](https://bcarroll.github.io/PiControl/Nodes_sm.png "PiControl Nodes screen")](https://bcarroll.github.io/PiControl/Nodes.png)
 
-The Nodes page displays all of the discovered devices on your network that are running PiControl (with the same secret key)
+The Nodes section displays all of the discovered devices on your network that are running PiControl (with the same secret key)
 
 Clicking on a Node in the Nodes list will take you to the PiControl interface on that Node.
 
@@ -109,7 +109,7 @@ The Services section displays information for all the configured services
 
 [![PiControl - Users](https://bcarroll.github.io/PiControl/Users_sm.png "PiControl Users screen")](https://bcarroll.github.io/PiControl/Users.png)
 
-The User section displays information about user accounts
+The Users section displays information about user accounts
 
 [![PiControl - Video](https://bcarroll.github.io/PiControl/Video_sm.png "PiControl Video screen")](https://bcarroll.github.io/PiControl/Video.png)
 
