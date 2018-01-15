@@ -12,7 +12,7 @@
 ***
 ### Manual Installation (do all the dirty work yourself)
 1. Download the code
-    * git clone https://github.com/bcarroll/PiControl.git
+    *    ``git clone https://github.com/bcarroll/PiControl.git``
 
     or
 
