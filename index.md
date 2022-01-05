@@ -3,7 +3,7 @@
   
   PiControl allows you to control all of your networked Raspberry Pi devices from a single web interface.
 
-  * [PiControl Documentation](PiControl/index)
+  * [PiControl Documentation](https://bcarroll.github.io/PiControl/index)
 
   * To install PiControl directly from the Raspberry Pi execute the following command:
 
